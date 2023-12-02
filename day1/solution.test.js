@@ -26,7 +26,6 @@ describe('getCalibatrationsSum', () => {
   });
 
   it('shuold return correct answer for challenge data', () => {
-    console.log({data: data.lenght});
     expect(getCalibatrationsSum(data)).toBe(55002);
   })
 });
@@ -41,7 +40,6 @@ describe('getCalibatrationsSumV2', () => {
   })
 
   it('shuold return correct answer for challenge dataV2', () => {
-    console.log({data: data?.[0]});
     expect(getCalibatrationsSumV2(data)).toBe(55093);
   })
 
