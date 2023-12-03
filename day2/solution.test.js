@@ -30,6 +30,6 @@ describe('elven cubes game solution', () => {
   });
 
   it('should return correct result for day2 data v2', () => {
-    expect(solutionV2(data)).toEqual(2286);
+    expect(solutionV2(data)).toEqual(65122);
   });
 });
