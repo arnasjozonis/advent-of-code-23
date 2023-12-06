@@ -112,4 +112,4 @@ const solutionV2 = ([seeds, ...maps]: string[]) => {
   return answer;
 };
 
-module.exports = {solution, solutionV2};
+export {solution, solutionV2};
