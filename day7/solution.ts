@@ -18,10 +18,10 @@ const CardValues: Record<Card, number> = {
   'A': 12,
 };
 
-const baseHandeStrength = _.range(13).map(x => 0);
+const baseHandStrength = _.range(13).map(x => 0);
 
 const getHandStrength = (hand: Card[], withJoker = false) => {
-  const handStrength = [...baseHandeStrength];
+  const handStrength = [...baseHandStrength];
   let jokers = 0;
   hand.forEach(card => {
     if(card === 'J' && withJoker) {
@@ -66,7 +66,7 @@ const compareHands = (first: Card[], second: Card[], withJokers = false) => {
 }
 
 const solution = (input: string[], withJokers = false) => {
-  CardValues.J = withJokers ? -1 : -9;
+  CardValues.J = withJokers ? -1 : 9;
   const rawHands = input.map(x => {
     const [hand, bid] = x.split(' ');
     return [hand.split('') as Card[], Number(bid)] as const;
