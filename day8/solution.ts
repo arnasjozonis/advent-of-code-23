@@ -46,34 +46,36 @@ const solution = ([instructions, ...mapStrs]: string[]) => {
 
 const solutionV2 = ([instructions, ...mapStrs]: string[]) => {
   NodeMap = {};
-  let steps = 0;
   mapStrs.forEach(parseNode);
-  const instructionsLength = instructions.length;
+
   const starts = Object.keys(NodeMap).filter(x => x[2] === 'A');
+  const repetitions = starts.map(() => 0);
 
   let currentDirectionIndex = 0;
-  let repetions = starts.map(x => 0);
+  let steps = 0;
+
   while (true) {
       steps++;
-      const direction = instructions[currentDirectionIndex % instructionsLength] as Direction;
+      const direction = instructions[currentDirectionIndex % instructions.length] as Direction;
       currentDirectionIndex++;
+
       for (let i = 0; i < starts.length; i++) {
           const next = NodeMap[starts[i]][step[direction]];
-          if(next[2] === 'Z' && repetions[i] === 0) {
-              repetions[i] = steps;
+          if(next[2] === 'Z' && repetitions[i] === 0) {
+              repetitions[i] = steps;
           }
           starts[i] = next;
       }
 
-      if (repetions.every(x => x > 0)) {
+      if (repetitions.every(x => x > 0)) {
           break;
       }
   }
   
-  const max = Math.max(...repetions);
+  const max = Math.max(...repetitions);
   let result = max;
   while(true) {
-      if(repetions.every(x => result % x === 0)) {
+      if(repetitions.every(x => result % x === 0)) {
           break;
       }
       result += max;
