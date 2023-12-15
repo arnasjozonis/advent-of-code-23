@@ -3,7 +3,7 @@ import { solution, lineValid } from './solution';
 import { parseTask, parseString } from '../utils';
 const example0 = parseString(`?###???????? 3,2,1`);
 const example16 = parseString(`?###???????? 3,2,1`);
-const example506250 = parseString(`###?????????? 3,2,1`);
+const example1 = parseString(`?#?#?#?#?#?#?#? 1,3,1,6`);
 
 const example = parseString(`???.### 1,1,3
 .??..??...?##. 1,1,3
@@ -29,8 +29,12 @@ describe('Hot springs lineValid', () => {
 });
 
 describe('Hot springs solution', () => {
+  // it('should return 10 for example0 data', () => {
+  //   expect(solution(example16)).toEqual(10);
+  // });
+
   it('should return 10 for example0 data', () => {
-    expect(solution(example16)).toEqual(10);
+    expect(solution(example0)).toEqual(10);
   });
 
   // it('should return 21 for example data', () => {
