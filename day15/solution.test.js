@@ -26,7 +26,7 @@ describe('HASHMAP solution', () => {
   });
 
   it('V2 should return answer for input data', () => {
-    expect(solutionV2(data[0])).toEqual(0);
+    expect(solutionV2(data[0])).toEqual(244403);
   });
   
 });
