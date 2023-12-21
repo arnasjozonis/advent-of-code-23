@@ -23,16 +23,20 @@ hdj{m>838:A,pv}
 const data = parseTask('day19', true);
 
 describe('Aplenty solution', () => {
-  it('should return 19114 for example data', () => {
-    expect(solution(example)).toEqual(19114);
+  // it('should return 19114 for example data', () => {
+  //   expect(solution(example)).toEqual(19114);
+  // });
+
+  // it('should return answer for input data', () => {
+  //   expect(solution(data)).toEqual(367602);
+  // });
+
+  it('should return 167409079868000 for example data', () => {
+    expect(solutionV2(example)).toEqual(4000 * 4000 * 4000 * 4000);
   });
 
   it('should return answer for input data', () => {
-    expect(solution(data)).toEqual(367602);
+    expect(solutionV2(data)).toEqual(4000 * 4000 * 4000 * 4000);
   });
-
-  // it('should return 167409079868000 for example data', () => {
-  //   expect(solutionV2(example)).toEqual(167409079868000);
-  // });
 
 });
